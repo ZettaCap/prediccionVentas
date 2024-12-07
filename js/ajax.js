@@ -31,7 +31,7 @@ function buscar(opcion, div, id, op, parametrosExtra = {}) {
     let objetoajax = ajax();
     const jsonParametros = JSON.stringify(parametrosExtra);
     console.log(opcion, div, id, op, parametrosExtra);
-    objetoajax.open("POST", "./php/vistas.php", true);
+    objetoajax.open("POST", "../php/vistas.php", true);
     let data = "opcion=" + encodeURIComponent(opcion) +
         "&id=" + encodeURIComponent(id) +
         "&operacion=" + encodeURIComponent(op) +
