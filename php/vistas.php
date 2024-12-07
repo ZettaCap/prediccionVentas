@@ -1,6 +1,15 @@
 <?php
 
-$opcion = $_POST['opcion'];
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405); // Código 405: Método no permitido
+    echo "Método no permitido.";
+    exit;
+}
+if (!isset($_POST['opcion'])) {
+    http_response_code(400); // Código 400: Petición incorrecta
+    echo "Falta el parámetro 'opcion'.";
+    exit;
+}
 
 switch ($opcion) {
     case 1:
